@@ -1,6 +1,0 @@
-i2c2apb_paddr    W1VTHtcsMNRkNrrfhLtuTxiQU2Mrexqq
-i2c2apb_pwdata    KexdhjF0F1AnzJYjzqPMNjgtgid8SMR9
-i2c2apb_psel    eai0iErwKt2oewUysKMg8ZlZrYPWmrzl
-i2c2apb_penable    Nb7hTCSDS6AjZIZ3KNvlWMDtl5zJ3Gnf
-i2c2apb_pwrite    WnDxIdFvNJzKVShx5GUUu8OgcTlbjAeK
-i2c2apb_pstrb    gY2b3jLetvsvHI8zycOHQwHSRGCAryTB
