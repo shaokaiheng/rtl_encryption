@@ -1,0 +1,5 @@
+slv_current_state    BBiuSC31KzUyOKmjZ66YQHqAuTEWgcLa
+slv_next_state    o9FPTnV6SsiMR1KGcEhXNU7U9vKORQYj
+slv_tx_flush    XwW18WKT6dThiAS0U8432rkzOV1QoNOh
+ic_enable_sync_vld    ycVZV9g6I0hNZDHCx6aN3rfUYdN9xop7
+stretch_scl_count    ZXq4hrFnKxNHcvwZXXF6DJuzm6r66vUx

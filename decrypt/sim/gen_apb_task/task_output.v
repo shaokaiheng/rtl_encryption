@@ -1,0 +1,11 @@
+mst_pclk    uI4VGMZQXTWgPtpsPXOWCL8bROqMO4zC
+mst_presetn    oN9MxcM6F8KexWql0KHwRa6ZXdCfiVDe
+=0    hejbbrjuLLRVN14lkx6XTtPLyaoL6GAN
+mst_penable=0    nl4TkFxW9rJ8l4qxl108ehPjo2LIJDIp
+mst_prdata    WLtwudG4ANd5K1aFOIQH7N5rNxy1rriM
+mst_pready    mMFX5BACTJdjnFFceNXOaknC7iXaLzaf
+slv_pclk    JoPvILvR1Wwa3pYpHgXRG4zTuAPNMUUM
+slv_presetn    IKBrMLoRgzBD3N7uDWDucBv5aRBkoKzB
+slv_penable=0    OgWLPA5zQf46gNfPiDBtOL4jODOn6RMs
+slv_prdata    UvLObK91sQVvPGHPAqxwDhSwRRhwBPWl
+slv_pready    nwFmMZGEsKaSc8IhrXz3wAouWRrimZ5N

@@ -1,0 +1,91 @@
+
+==============================================================================
+                RTL Encryption Script Start
+Script Flow:
+  1. get all .v .sv files @ Root Path
+  2. loop i for all files:
+     a.get all reg & wire names
+     b.filter input/output/inout names
+     c.generate rand str 32-len-str :start wit a-z/A-Z
+     d.recording encryption seed var-str <==> rand-str
+     e.replace var,rand
+     f.gen new file & rand-str-file
+==============================================================================
+
+>>The current progress is: ../../i2c_ip_env/tsmc_28_sim/std/tcbn28hpcplusbwp7t40p140hvt.v  --->  ./output/tsmc_28_sim/std/tcbn28hpcplusbwp7t40p140hvt.v
+>>The current progress is: ../../i2c_ip_env/tsmc_28_sim/io/tphn28hpcpgv18.v  --->  ./output/tsmc_28_sim/io/tphn28hpcpgv18.v
+>>The current progress is: tb.v      : skip file
+>>The current progress is: task_output.v      : skip file
+>>The current progress is: ../../i2c_ip_env/sim/gen_inst/input_file/i2c_mst_0109.v  --->  ./output/sim/gen_inst/input_file/i2c_mst_0109.v
+>>The current progress is: ../../i2c_ip_env/sim/gen_inst/input_file/i2c_slv_0220.v  --->  ./output/sim/gen_inst/input_file/i2c_slv_0220.v
+>>The current progress is: ../../i2c_ip_env/sim/gen_inst/output_file/i2c_mst_0109.v  --->  ./output/sim/gen_inst/output_file/i2c_mst_0109.v
+>>The current progress is: ../../i2c_ip_env/sim/gen_inst/output_file/top.v  --->  ./output/sim/gen_inst/output_file/top.v
+>>The current progress is: ../../i2c_ip_env/sim/gen_inst/output_file/i2c_slv_0220.v  --->  ./output/sim/gen_inst/output_file/i2c_slv_0220.v
+>>The current progress is: i2c2apb_inst.v      : skip file
+>>The current progress is: gpio.v      : skip file
+>>The current progress is: ../../i2c_ip_env/sim/inst_and_task/DW_apb_i2c_defs.v  --->  ./output/sim/inst_and_task/DW_apb_i2c_defs.v
+>>The current progress is: dut_inst.v      : skip file
+>>The current progress is: dut_i2c_to_apb.v      : skip file
+>>The current progress is: apb_wr_rd.v      : skip file
+>>The current progress is: mst_cfg_task.v      : skip file
+>>The current progress is: inst_i2c_slv_wbm.v      : skip file
+>>The current progress is: demo.v      : skip file
+>>The current progress is: i2c_mst_smoke_test.v      : skip file
+>>The current progress is: i2c_mst2slv_smoke_test.v      : skip file
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_bcm21.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_bcm21.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_async_fifo.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_async_fifo.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_bcm05.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_bcm05.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_fifo.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_fifo.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_slvfsm.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_slvfsm.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_mstfsm.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_mstfsm.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_bcm06.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_bcm06.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_regs.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_regs.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_toggle.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_toggle.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220-undef.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220-undef.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_sync.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_sync.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_clk_gen.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_clk_gen.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_intctl.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_intctl.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_tx_shift.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_tx_shift.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_regfile.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_regfile.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_bcm57.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_bcm57.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_rx_filter.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_rx_filter.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_bcm99.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_bcm99.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_bcm47.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_bcm47.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_biu.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_biu.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_rx_shift.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_rx_shift.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_bcm41.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_bcm41.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_dma.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_dma.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_bcm07.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_bcm07.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_bcm36_nhs.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_bcm36_nhs.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_slv_20250220/src/i2c_slv_0220_tog.v  --->  ./output/src/i2c_slv_20250220/src/i2c_slv_0220_tog.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/sim/demo_test.v  --->  ./output/src/i2c_mst_20250109/sim/demo_test.v
+>>The current progress is: tb.v      : skip file
+>>The current progress is: apb_wr_rd.v      : skip file
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_bcm41.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_bcm41.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_intctl.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_intctl.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_mstfsm.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_mstfsm.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_regs.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_regs.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_dma.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_dma.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_bcm47.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_bcm47.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_rx_shift.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_rx_shift.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_bcm05.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_bcm05.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_tog.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_tog.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_rx_filter.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_rx_filter.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_regfile.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_regfile.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_fifo.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_fifo.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_toggle.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_toggle.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_slvfsm.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_slvfsm.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_async_fifo.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_async_fifo.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_bcm06.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_bcm06.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_bcm07.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_bcm07.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_sync.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_sync.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_bcm21.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_bcm21.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_bcm57.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_bcm57.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109-undef.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109-undef.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_biu.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_biu.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_bcm99.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_bcm99.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_tx_shift.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_tx_shift.v
+>>The current progress is: ../../i2c_ip_env/src/i2c_mst_20250109/src/i2c_mst_0109_clk_gen.v  --->  ./output/src/i2c_mst_20250109/src/i2c_mst_0109_clk_gen.v
+>>The current progress is: ../../i2c_ip_env/i2c_to_apb/rtl/i2c2apb_top.v  --->  ./output/i2c_to_apb/rtl/i2c2apb_top.v

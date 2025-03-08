@@ -1,0 +1,12 @@
+DEPTH-1]    WLNqU6omrCGFfDrr2U52m9WFFAYfUfn3
+write_addr    FcQEbCdRhVLyAmNeVGLGybWDm9eeNhCa
+wr_n_int    QszBm9pdakQoLzcbz0NJXsWyTwAobw3A
+write_en_n    ysKWtgeH7l3EhzmO76BRPEgEeV4uKPCk
+write_data    JfhUOfuCeuAuJ3tOKfYElmEEyHUtK92U
+read_addr    imFTHHwIksYJqBk3dBeGkXdHinevxUGL
+read_data    KBP5cRKoYTifLjO6vPGvZDk3U3tIZn05
+data_out_pipe    prCzgggAFxCWnbTnQ8NNcX1KzxBbBYzE
+we_pipe    ZJPi8NyQRpEIC94dkz6QsBzzO4g4PH0H
+wr_addr_pipe    gq5bUa8RL6H5z4Ngrcy0sG14l3SGcwdg
+data_in_pipe    fBDLJx59JUBwau1w3ZCDDaHlcwYeRedQ
+rd_addr_pipe    eLF4zsJcPxMxsGQXc2pQqHeCRXlew2IY
