@@ -123,20 +123,23 @@ for f in origin_v_file_lst:
         src_f_dir = f
         dest_f_dir = f.replace(root_path_str,out_path_str)
         decrypt_f_dir = f.replace(root_path_str,decrypt_path_str)
-        print(f'>>The current progress is: {src_f_dir}  --->  {dest_f_dir}')
         var_lst=extract_wires_regs(f)
-        rand_mapping = generate_random_mapping(var_lst)
-        encrypt_verilog_str=''
-        decrypt_lktable=''
-        with open (src_f_dir,'r',errors="ignore")as file:
-            src_verilog_str = file.read()
-        encrypt_verilog_str=src_verilog_str
-        for k,v in rand_mapping.items():
-            origin_var=k
-            new_var= v
-            #encrypt_verilog_str = encrypt_verilog_str.replace(origin_var,new_var)
-            encrypt_verilog_str=replace_whole_word(encrypt_verilog_str, origin_var,new_var, case_sensitive=True)
-            decrypt_lktable = decrypt_lktable+origin_var+'    '+new_var+'\n'
-        write_file_with_directories(dest_f_dir,encrypt_verilog_str)
-        write_file_with_directories(decrypt_f_dir,decrypt_lktable)
+        if len(var_lst) == 0:
+            print(f'>>The current progress is: {src_f_dir}      valid var is empty skip file')
+        else:
+            print(f'>>The current progress is: {src_f_dir}  --->  {dest_f_dir}')
+            rand_mapping = generate_random_mapping(var_lst)
+            encrypt_verilog_str=''
+            decrypt_lktable=''
+            with open (src_f_dir,'r',errors="ignore")as file:
+                src_verilog_str = file.read()
+            encrypt_verilog_str=src_verilog_str
+            for k,v in rand_mapping.items():
+                origin_var=k
+                new_var= v
+                #encrypt_verilog_str = encrypt_verilog_str.replace(origin_var,new_var)
+                encrypt_verilog_str=replace_whole_word(encrypt_verilog_str, origin_var,new_var, case_sensitive=True)
+                decrypt_lktable = decrypt_lktable+origin_var+'    '+new_var+'\n'
+            write_file_with_directories(dest_f_dir,encrypt_verilog_str)
+            write_file_with_directories(decrypt_f_dir,decrypt_lktable)
 

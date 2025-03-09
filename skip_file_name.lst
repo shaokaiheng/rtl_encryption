@@ -10,4 +10,5 @@ gpio.v
 i2c2apb_inst.v
 inst_i2c_slv_wbm.v
 mst_cfg_task.v
-
+i2c_slave.v
+i2c_slave_wbm.v

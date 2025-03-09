@@ -1,4 +1,4 @@
-export ROOT_PATH = ../../i2c_ip_env/
+export ROOT_PATH = /home/master/workarea/peri/i2c_ip_env/
 export OUT_ROOT_PATH = ./output/
 export DECRYPT_ROOT_PATH = ./decrypt/
 
