@@ -22,7 +22,7 @@ def extract_verilog_ports(filename):
         content = f.read()
     content = re.sub(r'//.*', '', content)            
     content = re.sub(r'/\*.*?\*/', '', content, flags=re.DOTALL)            
-    pattern = r'\b(?:input|output|inout)\b\s*(?:$$.*?$$\s*)?\s*([^;]+)'
+    pattern = r'\b(?:input|output|inout)\b\s*((?:[^;)]|$[^)]*$)*)'
     matches = re.findall(pattern, content, flags=re.IGNORECASE)
     ports = []
     for match in matches:
